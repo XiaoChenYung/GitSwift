@@ -14,6 +14,9 @@
 		927390DB1F1F4EDE006DB05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927390D91F1F4EDE006DB05F /* LaunchScreen.storyboard */; };
 		927390E61F1F4EDE006DB05F /* GitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390E51F1F4EDE006DB05F /* GitSwiftTests.swift */; };
 		927390F11F1F4EDE006DB05F /* GitSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390F01F1F4EDE006DB05F /* GitSwiftUITests.swift */; };
+		927391061F1F5844006DB05F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391051F1F5844006DB05F /* View.swift */; };
+		927391081F1F5859006DB05F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391071F1F5859006DB05F /* ViewModel.swift */; };
+		9273910B1F1F58DA006DB05F /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273910A1F1F58DA006DB05F /* NetWork.swift */; };
 		B5720EAB1D49FD7B7DD3ED05 /* Pods_GitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E686816DBD8120A3A5657A /* Pods_GitSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		927390EC1F1F4EDE006DB05F /* GitSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		927390F01F1F4EDE006DB05F /* GitSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSwiftUITests.swift; sourceTree = "<group>"; };
 		927390F21F1F4EDE006DB05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		927391051F1F5844006DB05F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		927391071F1F5859006DB05F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9273910A1F1F58DA006DB05F /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
 		BEFC79E4F22283E61FAF2960 /* Pods-GitSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F1E686816DBD8120A3A5657A /* Pods_GitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +110,9 @@
 		927390CF1F1F4EDE006DB05F /* GitSwift */ = {
 			isa = PBXGroup;
 			children = (
+				927391091F1F58CD006DB05F /* Utl */,
+				927391041F1F5801006DB05F /* View */,
+				927391031F1F57F8006DB05F /* ViewModel */,
 				927390D01F1F4EDE006DB05F /* AppDelegate.swift */,
 				927390D21F1F4EDE006DB05F /* ViewController.swift */,
 				927390D41F1F4EDE006DB05F /* Main.storyboard */,
@@ -130,6 +139,30 @@
 				927390F21F1F4EDE006DB05F /* Info.plist */,
 			);
 			path = GitSwiftUITests;
+			sourceTree = "<group>";
+		};
+		927391031F1F57F8006DB05F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				927391071F1F5859006DB05F /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		927391041F1F5801006DB05F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				927391051F1F5844006DB05F /* View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		927391091F1F58CD006DB05F /* Utl */ = {
+			isa = PBXGroup;
+			children = (
+				9273910A1F1F58DA006DB05F /* NetWork.swift */,
+			);
+			path = Utl;
 			sourceTree = "<group>";
 		};
 		AE121FDA2B8410EB88E9934D /* Frameworks */ = {
@@ -339,6 +372,9 @@
 			files = (
 				927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */,
 				927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */,
+				927391081F1F5859006DB05F /* ViewModel.swift in Sources */,
+				927391061F1F5844006DB05F /* View.swift in Sources */,
+				9273910B1F1F58DA006DB05F /* NetWork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +627,7 @@
 				927390F71F1F4EDE006DB05F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927390F81F1F4EDE006DB05F /* Build configuration list for PBXNativeTarget "GitSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -599,6 +636,7 @@
 				927390FA1F1F4EDE006DB05F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927390FB1F1F4EDE006DB05F /* Build configuration list for PBXNativeTarget "GitSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +645,7 @@
 				927390FD1F1F4EDE006DB05F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
