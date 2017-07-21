@@ -13,11 +13,13 @@ PODS:
   - RxRealm (0.6.0):
     - RealmSwift (~> 2.5)
     - RxSwift (~> 3.2)
-  - RxSwift (3.5.0)
+  - RxSwift (3.6.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - RxAlamofire
   - RxRealm
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -25,8 +27,9 @@ SPEC CHECKSUMS:
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxRealm: 323de579b50b5e0f4a3e087d5925021f976ffaf1
-  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 7aec958010573d78e419b8f71384397c58074fd7
+PODFILE CHECKSUM: ff966077fe6d097c2345fac7b6507c9168e39a65
 
 COCOAPODS: 1.2.1

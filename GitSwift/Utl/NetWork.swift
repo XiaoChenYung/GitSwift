@@ -9,11 +9,17 @@
 import Foundation
 import RxAlamofire
 import Alamofire
+import RxSwift
+import SwiftyJSON
+
+let baseURL = "https://api.github.com/"
 
 enum NetMethod {
-    case get
+    case GET
+    case POST
 }
 
-struct NetWork {
+func netRequest(methodsss: NetMethod = .GET, url: String, params: [String: Any]) ->  Observable<JSON> {
+    request(<#T##method: HTTPMethod##HTTPMethod#>, <#T##url: URLConvertible##URLConvertible#>)
     
 }

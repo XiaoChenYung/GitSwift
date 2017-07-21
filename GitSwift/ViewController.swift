@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+
+let disposeBag = DisposeBag()
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        request(method: .Get, url: "users", params: ["fff":"sdf"]).subscribe(onNext: { json in
+            print(json)
+        })
+        
+        .addDisposableTo(disposeBag)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

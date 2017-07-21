@@ -17,6 +17,9 @@
 		927391061F1F5844006DB05F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391051F1F5844006DB05F /* View.swift */; };
 		927391081F1F5859006DB05F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391071F1F5859006DB05F /* ViewModel.swift */; };
 		9273910B1F1F58DA006DB05F /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273910A1F1F58DA006DB05F /* NetWork.swift */; };
+		92D3A6981F2190390073B3D1 /* SwiftyJSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A6971F2190390073B3D1 /* SwiftyJSONAble.swift */; };
+		92D3A69A1F2193510073B3D1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A6991F2193510073B3D1 /* Result.swift */; };
+		92D3A69C1F2193F20073B3D1 /* ObservableSwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A69B1F2193F20073B3D1 /* ObservableSwiftJSON.swift */; };
 		B5720EAB1D49FD7B7DD3ED05 /* Pods_GitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E686816DBD8120A3A5657A /* Pods_GitSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		927391051F1F5844006DB05F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		927391071F1F5859006DB05F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9273910A1F1F58DA006DB05F /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
+		92D3A6971F2190390073B3D1 /* SwiftyJSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONAble.swift; sourceTree = "<group>"; };
+		92D3A6991F2193510073B3D1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		92D3A69B1F2193F20073B3D1 /* ObservableSwiftJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableSwiftJSON.swift; sourceTree = "<group>"; };
 		BEFC79E4F22283E61FAF2960 /* Pods-GitSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F1E686816DBD8120A3A5657A /* Pods_GitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				9273910A1F1F58DA006DB05F /* NetWork.swift */,
+				92D3A6971F2190390073B3D1 /* SwiftyJSONAble.swift */,
+				92D3A6991F2193510073B3D1 /* Result.swift */,
+				92D3A69B1F2193F20073B3D1 /* ObservableSwiftJSON.swift */,
 			);
 			path = Utl;
 			sourceTree = "<group>";
@@ -370,11 +379,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D3A69C1F2193F20073B3D1 /* ObservableSwiftJSON.swift in Sources */,
 				927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */,
 				927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */,
 				927391081F1F5859006DB05F /* ViewModel.swift in Sources */,
 				927391061F1F5844006DB05F /* View.swift in Sources */,
+				92D3A69A1F2193510073B3D1 /* Result.swift in Sources */,
 				9273910B1F1F58DA006DB05F /* NetWork.swift in Sources */,
+				92D3A6981F2190390073B3D1 /* SwiftyJSONAble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
