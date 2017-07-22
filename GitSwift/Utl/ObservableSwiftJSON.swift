@@ -36,7 +36,7 @@ public extension ObservableType where E == JSON {
     ///
     /// - Parameter type: <#type description#>
     /// - Returns: <#return value description#>
-    public func mapSwiftJSONObject<T: SwiftyJSONAble>(type: T.Type) -> Observable<T> {
+    public func mapSwiftJSONObject<T: SwiftyJSONAble>(_ type: T.Type) -> Observable<T> {
         return flatMap { response -> Observable<T> in
             guard let mappedObject = T(jsonData: response) else {
                 throw SwiftJSONError(domain: "SwiftJSON", code: 101, message: "对象转换失败")
@@ -45,7 +45,7 @@ public extension ObservableType where E == JSON {
         }
     }
     
-    public func mapSwiftJSONArray<T: SwiftyJSONAble>(type: T.Type) -> Observable<[T]> {
+    public func mapSwiftJSONArray<T: SwiftyJSONAble>(_ type: T.Type) -> Observable<[T]> {
         return flatMap { response -> Observable<[T]> in
             let mappedObjectArray = response.arrayValue.flatMap { T(jsonData: $0) }
             return Observable.just(mappedObjectArray)

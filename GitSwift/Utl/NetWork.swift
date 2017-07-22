@@ -20,6 +20,8 @@ enum NetMethod {
 }
 
 func netRequest(methodsss: NetMethod = .GET, url: String, params: [String: Any]) ->  Observable<JSON> {
-    request(<#T##method: HTTPMethod##HTTPMethod#>, <#T##url: URLConvertible##URLConvertible#>)
     
+    return requestJSON(.get, baseURL + url, parameters: params).flatMap { (res, response) -> Observable<JSON> in
+        return Observable.just(JSON(response))
+    }
 }

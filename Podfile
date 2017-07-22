@@ -5,4 +5,5 @@ target 'GitSwift' do
     pod 'RxAlamofire'
     pod 'RxRealm'
     pod 'SwiftyJSON'
+    pod 'SwiftyUserDefaults'
 end

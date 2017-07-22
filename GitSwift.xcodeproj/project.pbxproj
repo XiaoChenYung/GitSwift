@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ADA6C061F231B6900515E92 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA6C051F231B6900515E92 /* UserModel.swift */; };
 		927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D01F1F4EDE006DB05F /* AppDelegate.swift */; };
 		927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D21F1F4EDE006DB05F /* ViewController.swift */; };
 		927390D61F1F4EDE006DB05F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927390D41F1F4EDE006DB05F /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ADA6C051F231B6900515E92 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		504324E02C7E383F2914610B /* Pods-GitSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		927390CD1F1F4EDE006DB05F /* GitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927390D01F1F4EDE006DB05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4ADA6C041F231AF700515E92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA6C051F231B6900515E92 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		927390C41F1F4EDE006DB05F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		927390CF1F1F4EDE006DB05F /* GitSwift */ = {
 			isa = PBXGroup;
 			children = (
+				4ADA6C041F231AF700515E92 /* Model */,
 				927391091F1F58CD006DB05F /* Utl */,
 				927391041F1F5801006DB05F /* View */,
 				927391031F1F57F8006DB05F /* ViewModel */,
@@ -386,6 +397,7 @@
 				927391061F1F5844006DB05F /* View.swift in Sources */,
 				92D3A69A1F2193510073B3D1 /* Result.swift in Sources */,
 				9273910B1F1F58DA006DB05F /* NetWork.swift in Sources */,
+				4ADA6C061F231B6900515E92 /* UserModel.swift in Sources */,
 				92D3A6981F2190390073B3D1 /* SwiftyJSONAble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

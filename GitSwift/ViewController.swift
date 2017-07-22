@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SwiftyJSON
 
 let disposeBag = DisposeBag()
 
@@ -16,11 +17,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        request(method: .Get, url: "users", params: ["fff":"sdf"]).subscribe(onNext: { json in
-            print(json)
-        })
+        netRequest(url: "users", params: ["ddd":"ds"])
+        .mapSwiftJSONArray(Result<UserModel>.self)
+        .subscribe(onNext: { json in
+            let result = json.first
+            let value = result?.element
+            print(value ?? "")
+        }).addDisposableTo(disposeBag)
         
-        .addDisposableTo(disposeBag)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
