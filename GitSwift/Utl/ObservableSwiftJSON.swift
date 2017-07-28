@@ -29,7 +29,7 @@ struct SwiftJSONError: Error {
     
 }
 
-public extension ObservableType where E == JSON {
+public extension ObservableType where E == Any {
     
     
     /// 转换单个对象
@@ -38,7 +38,8 @@ public extension ObservableType where E == JSON {
     /// - Returns: <#return value description#>
     public func mapSwiftJSONObject<T: SwiftyJSONAble>(_ type: T.Type) -> Observable<T> {
         return flatMap { response -> Observable<T> in
-            guard let mappedObject = T(jsonData: response) else {
+            let json = JSON(response)
+            guard let mappedObject = T(jsonData: json) else {
                 throw SwiftJSONError(domain: "SwiftJSON", code: 101, message: "对象转换失败")
             }
             return Observable.just(mappedObject)
@@ -47,7 +48,8 @@ public extension ObservableType where E == JSON {
     
     public func mapSwiftJSONArray<T: SwiftyJSONAble>(_ type: T.Type) -> Observable<[T]> {
         return flatMap { response -> Observable<[T]> in
-            let mappedObjectArray = response.arrayValue.flatMap { T(jsonData: $0) }
+            let json = JSON(response)
+            let mappedObjectArray = json.arrayValue.flatMap { T(jsonData: $0) }
             return Observable.just(mappedObjectArray)
         }
     }

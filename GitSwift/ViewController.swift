@@ -17,13 +17,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        netRequest(url: "users", params: ["ddd":"ds"])
-        .mapSwiftJSONArray(Result<UserModel>.self)
-        .subscribe(onNext: { json in
-            let result = json.first
-            let value = result?.element
-            print(value ?? "")
-        }).addDisposableTo(disposeBag)
+        
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
