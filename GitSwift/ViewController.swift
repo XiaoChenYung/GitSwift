@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import SwiftyJSON
 
 let disposeBag = DisposeBag()
 
