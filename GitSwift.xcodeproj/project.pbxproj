@@ -21,6 +21,12 @@
 		4A074FD81F2C8AED00B29648 /* NetWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A074FC21F2C8AED00B29648 /* NetWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A074FE21F2CC48800B29648 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FE11F2CC48800B29648 /* User.swift */; };
 		4A074FE41F2CC4B600B29648 /* AllUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FE31F2CC4B600B29648 /* AllUserUseCase.swift */; };
+		4A074FEA1F2CCF7900B29648 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FE91F2CCF7900B29648 /* NetWork.swift */; };
+		4A074FEC1F2CCF8F00B29648 /* NetWorkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FEB1F2CCF8F00B29648 /* NetWorkProvider.swift */; };
+		4A074FEE1F2CD05E00B29648 /* UserNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FED1F2CD05E00B29648 /* UserNetWork.swift */; };
+		4A074FF01F2CD0FC00B29648 /* User+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FEF1F2CD0FC00B29648 /* User+Mapping.swift */; };
+		4A074FF21F2CD19300B29648 /* AllUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FF11F2CD19300B29648 /* AllUserUseCase.swift */; };
+		4A074FF41F2CD46B00B29648 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A074FF31F2CD46B00B29648 /* UseCaseProvider.swift */; };
 		6D8F6FD828A9E6EC964C429A /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D4DCE4627619A7914AD7FA /* Pods_DomainTests.framework */; };
 		927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D01F1F4EDE006DB05F /* AppDelegate.swift */; };
 		927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D21F1F4EDE006DB05F /* ViewController.swift */; };
@@ -129,6 +135,12 @@
 		4A074FD31F2C8AED00B29648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A074FE11F2CC48800B29648 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A074FE31F2CC4B600B29648 /* AllUserUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUserUseCase.swift; sourceTree = "<group>"; };
+		4A074FE91F2CCF7900B29648 /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
+		4A074FEB1F2CCF8F00B29648 /* NetWorkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkProvider.swift; sourceTree = "<group>"; };
+		4A074FED1F2CD05E00B29648 /* UserNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetWork.swift; sourceTree = "<group>"; };
+		4A074FEF1F2CD0FC00B29648 /* User+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Mapping.swift"; sourceTree = "<group>"; };
+		4A074FF11F2CD19300B29648 /* AllUserUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUserUseCase.swift; sourceTree = "<group>"; };
+		4A074FF31F2CD46B00B29648 /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		504324E02C7E383F2914610B /* Pods-GitSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		5237AFFE82E95A3BB4273ED6 /* Pods-NetWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetWork/Pods-NetWork.debug.xcconfig"; sourceTree = "<group>"; };
 		738FA10BAF33E48744928E9B /* Pods-NetWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetWork.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetWork/Pods-NetWork.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +260,10 @@
 		4A074FC31F2C8AED00B29648 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				4A074FE51F2CCEF000B29648 /* API */,
+				4A074FE61F2CCEF000B29648 /* Entries */,
+				4A074FE71F2CCEF000B29648 /* NetWork */,
+				4A074FE81F2CCEF000B29648 /* UseCase */,
 				4A074FC41F2C8AED00B29648 /* NetWork.h */,
 				4A074FC51F2C8AED00B29648 /* Info.plist */,
 			);
@@ -275,6 +291,40 @@
 			isa = PBXGroup;
 			children = (
 				4A074FE31F2CC4B600B29648 /* AllUserUseCase.swift */,
+				4A074FF31F2CD46B00B29648 /* UseCaseProvider.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4A074FE51F2CCEF000B29648 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4A074FED1F2CD05E00B29648 /* UserNetWork.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4A074FE61F2CCEF000B29648 /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				4A074FEF1F2CD0FC00B29648 /* User+Mapping.swift */,
+			);
+			path = Entries;
+			sourceTree = "<group>";
+		};
+		4A074FE71F2CCEF000B29648 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				4A074FE91F2CCF7900B29648 /* NetWork.swift */,
+				4A074FEB1F2CCF8F00B29648 /* NetWorkProvider.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		4A074FE81F2CCEF000B29648 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				4A074FF11F2CD19300B29648 /* AllUserUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -584,6 +634,7 @@
 					4A074FC11F2C8AED00B29648 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = YUQB2X8V9P;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4A074FC91F2C8AED00B29648 = {
@@ -939,6 +990,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A074FE41F2CC4B600B29648 /* AllUserUseCase.swift in Sources */,
+				4A074FF41F2CD46B00B29648 /* UseCaseProvider.swift in Sources */,
 				4A074FE21F2CC48800B29648 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -955,6 +1007,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A074FF21F2CD19300B29648 /* AllUserUseCase.swift in Sources */,
+				4A074FEE1F2CD05E00B29648 /* UserNetWork.swift in Sources */,
+				4A074FEA1F2CCF7900B29648 /* NetWork.swift in Sources */,
+				4A074FEC1F2CCF8F00B29648 /* NetWorkProvider.swift in Sources */,
+				4A074FF01F2CD0FC00B29648 /* User+Mapping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1144,6 +1201,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5237AFFE82E95A3BB4273ED6 /* Pods-NetWork.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1157,6 +1215,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yangxiaochen.NetWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1168,6 +1227,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 738FA10BAF33E48744928E9B /* Pods-NetWork.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

@@ -1,5 +1,5 @@
 //
-//  AllUserUseCase.swift
+//  UseCaseProvider.swift
 //  GitSwift
 //
 //  Created by 杨晓晨 on 2017/7/29.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import RxSwift
 
-public protocol AllUserUseCase {
-    func users() -> Observable<[User]>
+public protocol UseCaseProvider {
+    func makeAllUser() -> AllUserUseCase
 }
