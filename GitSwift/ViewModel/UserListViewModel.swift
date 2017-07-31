@@ -7,8 +7,22 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+import Domain
 
-class UserListViewModel: BaseViewModel {
+class UserListViewModel {
     
-    
+    struct Input {
+        let trigger: Driver<Void>
+        let createPostTrigger: Driver<Void>
+        let selection: Driver<IndexPath>
+    }
+    struct Output {
+        let fetching: Driver<Bool>
+        let posts: Driver<[User]>
+        let createPost: Driver<Void>
+        let selectedPost: Driver<User>
+        let error: Driver<Error>
+    }
 }

@@ -7,6 +7,21 @@
 //
 
 import Foundation
-class BaseViewModel: NSObject {
+
+protocol ViewModelType {
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
+enum TitleViewType {
+    case TitleViewTypeDefault //Single title
+    case TitleViewTypeDoubleTitle //Double title
+    case TitleViewTypeLoadingTitle //Loading title
+}
+
+class ViewModel {
     
 }
+

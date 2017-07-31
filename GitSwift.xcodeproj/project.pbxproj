@@ -37,6 +37,11 @@
 		927390F11F1F4EDE006DB05F /* GitSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390F01F1F4EDE006DB05F /* GitSwiftUITests.swift */; };
 		927391061F1F5844006DB05F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391051F1F5844006DB05F /* View.swift */; };
 		927391081F1F5859006DB05F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391071F1F5859006DB05F /* ViewModel.swift */; };
+		92A30FCA1F2F027C00512CD3 /* ViewModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FC91F2F027C00512CD3 /* ViewModelService.swift */; };
+		92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FCB1F2F040400512CD3 /* NavigationControllerStack.swift */; };
+		92A30FD01F2F063A00512CD3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FCF1F2F063A00512CD3 /* Common.swift */; };
+		92A30FD21F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FD11F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift */; };
+		92A30FD41F2F0C5D00512CD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FD31F2F0C5D00512CD3 /* BaseViewController.swift */; };
 		92E8C2E11F2B1EDC00983657 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8C2E01F2B1EDC00983657 /* UserListViewModel.swift */; };
 		AB053109352E4A67420A0449 /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850E25219755C5FB3F322BEA /* Pods_Domain.framework */; };
 		B5720EAB1D49FD7B7DD3ED05 /* Pods_GitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E686816DBD8120A3A5657A /* Pods_GitSwift.framework */; };
@@ -161,6 +166,11 @@
 		927390F21F1F4EDE006DB05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927391051F1F5844006DB05F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		927391071F1F5859006DB05F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		92A30FC91F2F027C00512CD3 /* ViewModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelService.swift; sourceTree = "<group>"; };
+		92A30FCB1F2F040400512CD3 /* NavigationControllerStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerStack.swift; sourceTree = "<group>"; };
+		92A30FCF1F2F063A00512CD3 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		92A30FD11F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAnimatedTransition.swift; sourceTree = "<group>"; };
+		92A30FD31F2F0C5D00512CD3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		92E8C2E01F2B1EDC00983657 /* UserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		97AEFC9AF8ACBBD3861BC016 /* Pods-GitSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwiftTests/Pods-GitSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4F5C746C65A7C0B6A839C22 /* Pods_NetWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,6 +372,8 @@
 		927390CF1F1F4EDE006DB05F /* GitSwift */ = {
 			isa = PBXGroup;
 			children = (
+				92A30FCD1F2F062400512CD3 /* Common */,
+				92A30FCE1F2F062400512CD3 /* Config */,
 				927391041F1F5801006DB05F /* View */,
 				927391031F1F57F8006DB05F /* ViewModel */,
 				927390D01F1F4EDE006DB05F /* AppDelegate.swift */,
@@ -396,6 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				927391071F1F5859006DB05F /* ViewModel.swift */,
+				92A30FC91F2F027C00512CD3 /* ViewModelService.swift */,
+				92A30FCB1F2F040400512CD3 /* NavigationControllerStack.swift */,
 				92E8C2E01F2B1EDC00983657 /* UserListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -405,8 +419,25 @@
 			isa = PBXGroup;
 			children = (
 				927391051F1F5844006DB05F /* View.swift */,
+				92A30FD31F2F0C5D00512CD3 /* BaseViewController.swift */,
+				92A30FD11F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92A30FCD1F2F062400512CD3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				92A30FCF1F2F063A00512CD3 /* Common.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		92A30FCE1F2F062400512CD3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		AE121FDA2B8410EB88E9934D /* Frameworks */ = {
@@ -1027,11 +1058,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A30FD41F2F0C5D00512CD3 /* BaseViewController.swift in Sources */,
+				92A30FD01F2F063A00512CD3 /* Common.swift in Sources */,
+				92A30FCA1F2F027C00512CD3 /* ViewModelService.swift in Sources */,
 				92E8C2E11F2B1EDC00983657 /* UserListViewModel.swift in Sources */,
 				927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */,
 				927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */,
+				92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */,
 				927391081F1F5859006DB05F /* ViewModel.swift in Sources */,
 				927391061F1F5844006DB05F /* View.swift in Sources */,
+				92A30FD21F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
