@@ -32,7 +32,6 @@
 		8B8040E5A40525FAB7E89DD4 /* Pods_Domain_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F015B6CED469E70417A54961 /* Pods_Domain_DomainTests.framework */; };
 		927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D01F1F4EDE006DB05F /* AppDelegate.swift */; };
 		927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D21F1F4EDE006DB05F /* ViewController.swift */; };
-		927390D61F1F4EDE006DB05F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927390D41F1F4EDE006DB05F /* Main.storyboard */; };
 		927390D81F1F4EDE006DB05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927390D71F1F4EDE006DB05F /* Assets.xcassets */; };
 		927390DB1F1F4EDE006DB05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927390D91F1F4EDE006DB05F /* LaunchScreen.storyboard */; };
 		927390E61F1F4EDE006DB05F /* GitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390E51F1F4EDE006DB05F /* GitSwiftTests.swift */; };
@@ -47,6 +46,8 @@
 		92DC4F161F30279500BBE4AA /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC4F151F30279500BBE4AA /* ViewRouter.swift */; };
 		92DC4F181F30547800BBE4AA /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC4F171F30547800BBE4AA /* UserListViewController.swift */; };
 		92DC4F201F3064B800BBE4AA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC4F1F1F3064B800BBE4AA /* TabBarController.swift */; };
+		92DC4F221F30677700BBE4AA /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC4F211F30677700BBE4AA /* TabBarViewModel.swift */; };
+		92DC4F241F3072E100BBE4AA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC4F231F3072E100BBE4AA /* NavigationController.swift */; };
 		92E8C2E11F2B1EDC00983657 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8C2E01F2B1EDC00983657 /* UserListViewModel.swift */; };
 		A039A7F599B34C60E1054CAE /* Pods_NetWork_NetWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E610CAFB4C766CA9201583 /* Pods_NetWork_NetWorkTests.framework */; };
 		AB053109352E4A67420A0449 /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850E25219755C5FB3F322BEA /* Pods_Domain.framework */; };
@@ -165,7 +166,6 @@
 		927390CD1F1F4EDE006DB05F /* GitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927390D01F1F4EDE006DB05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927390D21F1F4EDE006DB05F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		927390D51F1F4EDE006DB05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		927390D71F1F4EDE006DB05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		927390DA1F1F4EDE006DB05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927390DC1F1F4EDE006DB05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,6 +185,8 @@
 		92DC4F151F30279500BBE4AA /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewRouter.swift; path = GitSwift/View/ViewRouter.swift; sourceTree = SOURCE_ROOT; };
 		92DC4F171F30547800BBE4AA /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		92DC4F1F1F3064B800BBE4AA /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		92DC4F211F30677700BBE4AA /* TabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		92DC4F231F3072E100BBE4AA /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		92E8C2E01F2B1EDC00983657 /* UserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		97AEFC9AF8ACBBD3861BC016 /* Pods-GitSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwiftTests/Pods-GitSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4F5C746C65A7C0B6A839C22 /* Pods_NetWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,7 +404,6 @@
 				927391031F1F57F8006DB05F /* ViewModel */,
 				927390D01F1F4EDE006DB05F /* AppDelegate.swift */,
 				927390D21F1F4EDE006DB05F /* ViewController.swift */,
-				927390D41F1F4EDE006DB05F /* Main.storyboard */,
 				927390D71F1F4EDE006DB05F /* Assets.xcassets */,
 				927390D91F1F4EDE006DB05F /* LaunchScreen.storyboard */,
 				927390DC1F1F4EDE006DB05F /* Info.plist */,
@@ -454,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				92A30FCF1F2F063A00512CD3 /* Common.swift */,
+				92DC4F231F3072E100BBE4AA /* NavigationController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -484,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				92DC4F1F1F3064B800BBE4AA /* TabBarController.swift */,
+				92DC4F211F30677700BBE4AA /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -809,7 +812,6 @@
 			files = (
 				927390DB1F1F4EDE006DB05F /* LaunchScreen.storyboard in Resources */,
 				927390D81F1F4EDE006DB05F /* Assets.xcassets in Resources */,
-				927390D61F1F4EDE006DB05F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1122,11 +1124,13 @@
 				92E8C2E11F2B1EDC00983657 /* UserListViewModel.swift in Sources */,
 				927390D31F1F4EDE006DB05F /* ViewController.swift in Sources */,
 				92DC4F181F30547800BBE4AA /* UserListViewController.swift in Sources */,
+				92DC4F241F3072E100BBE4AA /* NavigationController.swift in Sources */,
 				927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */,
 				92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */,
 				92DC4F161F30279500BBE4AA /* ViewRouter.swift in Sources */,
 				927391081F1F5859006DB05F /* ViewModel.swift in Sources */,
 				927391061F1F5844006DB05F /* View.swift in Sources */,
+				92DC4F221F30677700BBE4AA /* TabBarViewModel.swift in Sources */,
 				92A30FD21F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1193,14 +1197,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		927390D41F1F4EDE006DB05F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				927390D51F1F4EDE006DB05F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		927390D91F1F4EDE006DB05F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1475,6 +1471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUQB2X8V9P;
 				INFOPLIST_FILE = GitSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchmedia.GitSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1490,6 +1487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUQB2X8V9P;
 				INFOPLIST_FILE = GitSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchmedia.GitSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";

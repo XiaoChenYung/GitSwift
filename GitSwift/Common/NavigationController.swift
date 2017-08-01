@@ -1,5 +1,5 @@
 //
-//  TabBarController.swift
+//  NavigationController.swift
 //  GitSwift
 //
 //  Created by tm on 2017/8/1.
@@ -7,22 +7,19 @@
 //
 
 import UIKit
-import RAMAnimatedTabBarController
 
-class TabBarController: RAMAnimatedTabBarController {
+class NavigationController: UINavigationController {
     
-    var viewModel: TabBarViewModel?
-    
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel as? TabBarViewModel
-        let navHome = NavigationController(rootViewController: UserListViewController(viewModel: (self.viewModel?.homeViewModel)!))
-        navHome.tabBarItem = RAMAnimatedTabBarItem(title: "首页", image: #imageLiteral(resourceName: "home"), selectedImage: nil)
-//        self.viewControllers = [navHome]  
-        super.init(viewControllers: [navHome])
+    override var shouldAutorotate: Bool {
+        return (self.topViewController?.shouldAutorotate)!
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return (self.topViewController?.supportedInterfaceOrientations)!
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return (self.topViewController?.preferredStatusBarStyle)!
     }
 
     override func viewDidLoad() {

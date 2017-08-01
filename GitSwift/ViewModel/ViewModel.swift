@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol ViewModelType {
     associatedtype Input
@@ -22,6 +24,12 @@ enum TitleViewType {
 }
 
 class ViewModel: NSObject {
+    var title: Variable<String> = Variable("") //主标题
+    var subtitle: Variable<String> = Variable("") //副标题
+    var titleType: Variable<TitleViewType> = Variable(TitleViewType.TitleViewTypeDefault) //标题类型
+    init(service: ViewModelService, params: Dictionary<String, Any>? = nil) {
+        super.init()
+    }
     
 }
 

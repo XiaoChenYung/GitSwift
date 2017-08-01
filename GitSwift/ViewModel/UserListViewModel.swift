@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import Domain
 
-class UserListViewModel: ViewModel {
+class UserListViewModel: ViewModel { 
     
     struct Input {
         let trigger: Driver<Void>

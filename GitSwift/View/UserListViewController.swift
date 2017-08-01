@@ -12,7 +12,16 @@ class UserListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let lable = UILabel()
+        lable.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        lable.text = "哈哈哈哈"
+        lable.textColor = UIColor.red
+        lable.isUserInteractionEnabled = true
+        view.addSubview(lable)
+        
+        let buttom = UIButton(type: UIButtonType.contactAdd)
+        view.addSubview(buttom)
+//        buttom.rx.tap.subscribe(onNext: <#T##((()) -> Void)?##((()) -> Void)?##(()) -> Void#>, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
         // Do any additional setup after loading the view.
     }
 

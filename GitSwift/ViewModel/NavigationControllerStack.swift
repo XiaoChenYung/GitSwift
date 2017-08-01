@@ -19,7 +19,7 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
     private var services: ViewModelService?
     private var navigationControllers: Array<UINavigationController>?
     
-    init(_ services: ViewModelService) {
+    init(services: ViewModelService) {
         super.init()
         self.services = services
         self.navigationControllers = Array()
@@ -57,11 +57,13 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
                 } else {
                     topVC.snapshot = self.navigationControllers?.last?.view.snapshotView(afterScreenUpdates: false)
                 }
-                let VC = viewControllerFromViewModel(viewModel: params.viewModel!)
+                let VC = viewControllerFromViewModel(viewModel: params.viewModel)
                 VC.hidesBottomBarWhenPushed = true
                 self.navigationControllers?.last?.pushViewController(VC, animated: true)
             case .pop:
                 self.navigationControllers?.last?.popViewController(animated: params.animate!)
+            case .reset:
+                APPDELEGATE?.window??.rootViewController = viewControllerFromViewModel(viewModel: params.viewModel)
             default:
                 print("")
             }

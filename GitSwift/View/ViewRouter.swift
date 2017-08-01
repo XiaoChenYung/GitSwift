@@ -10,11 +10,14 @@ import UIKit
 
 //struct ViewRouter {
 
-    func viewControllerFromViewModel (viewModel: ViewModel) -> BaseViewController {
-        if viewModel.isMember(of: UserListViewModel.self) {
-            return UserListViewController(viewModel: viewModel)
+    func viewControllerFromViewModel (viewModel: ViewModel?) -> UIViewController {
+//        assert(viewModel == nil, "viewModel不得为🈳️")
+        if viewModel!.isMember(of: UserListViewModel.self) {
+            return UserListViewController(viewModel: viewModel!)
+        } else if viewModel!.isMember(of: TabBarViewModel.self) {
+            return TabBarController(viewModel: viewModel!)
         }
-        return BaseViewController(viewModel: viewModel)
+        return BaseViewController(viewModel: viewModel!)
     }
     
 //}

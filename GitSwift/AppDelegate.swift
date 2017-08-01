@@ -12,14 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var service: ViewModelServiceImp?
+    var navigationControllerStack: NavigationControllerStack?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let vvv = ViewModel()
-        print(vvv.isKind(of: ViewModel.self))
-        let lll = UserListViewModel()
-        print(lll.isKind(of: UserListViewModel.self))
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
+        self.service = ViewModelServiceImp()
+        self.navigationControllerStack = NavigationControllerStack(services: service!)
+        self.service?.resetRootViewModel(viewModel: createInitialViewModel())
+        self.window?.makeKeyAndVisible()
         return true
+    }
+    
+    func createInitialViewModel() -> ViewModel {
+        return TabBarViewModel(service: self.service!, params: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
