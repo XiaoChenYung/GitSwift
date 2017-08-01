@@ -14,11 +14,25 @@ class TabBarController: RAMAnimatedTabBarController {
     var viewModel: TabBarViewModel?
     
     init(viewModel: ViewModel) {
+
         self.viewModel = viewModel as? TabBarViewModel
         let navHome = NavigationController(rootViewController: UserListViewController(viewModel: (self.viewModel?.homeViewModel)!))
-        navHome.tabBarItem = RAMAnimatedTabBarItem(title: "首页", image: #imageLiteral(resourceName: "home"), selectedImage: nil)
+        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "camera_24px_1174410_easyicon.net"), selectedImage: #imageLiteral(resourceName: "camera_32px_1174410_easyicon.net"))
+        homeAni.textColor = UIColor.green
+        homeAni.iconColor = UIColor.yellow
+        homeAni.animation = RAMBounceAnimation()
+        navHome.tabBarItem = homeAni
+        let dongtai = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.sendViewModel)!))
+        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "camera_32px_1174410_easyicon.net"), selectedImage: #imageLiteral(resourceName: "camera_48px_1174410_easyicon.net"))
+        dongtaiAni.animation = RAMFrameItemAnimation()
+        dongtaiAni.yOffSet = 10
+        dongtai.tabBarItem = dongtaiAni
+        let me = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.meViewModel)!))
+        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "camera_24px_1174410_easyicon.net"), selectedImage: #imageLiteral(resourceName: "camera_32px_1174410_easyicon.net"))
+        meAni.animation = RAMRotationAnimation()
+        me.tabBarItem = meAni
 //        self.viewControllers = [navHome]  
-        super.init(viewControllers: [navHome])
+        super.init(viewControllers: [navHome, dongtai, me])
     }
     
     required init?(coder aDecoder: NSCoder) {
