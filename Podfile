@@ -18,7 +18,7 @@ target 'GitSwift' do
     use_frameworks!
     rx_swift
     rx_cocoa
-    
+    pod 'RAMAnimatedTabBarController'
     target 'GitSwiftTests' do
         inherit! :search_paths
         test_pods
