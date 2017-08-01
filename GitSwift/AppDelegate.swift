@@ -15,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        var progress = 1.0
-        progress = progress.advanced(by: 2.0)
-        
+        let vvv = ViewModel()
+        print(vvv.isKind(of: ViewModel.self))
+        let lll = UserListViewModel()
+        print(lll.isKind(of: UserListViewModel.self))
         return true
     }
 

@@ -6,12 +6,12 @@
 //  Copyright © 2017年 tm. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxCocoa
 import RxSwift
 import Domain
 
-class UserListViewModel {
+class UserListViewModel: ViewModel {
     
     struct Input {
         let trigger: Driver<Void>

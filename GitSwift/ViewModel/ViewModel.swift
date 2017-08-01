@@ -21,7 +21,7 @@ enum TitleViewType {
     case TitleViewTypeLoadingTitle //Loading title
 }
 
-class ViewModel {
+class ViewModel: NSObject {
     
 }
 

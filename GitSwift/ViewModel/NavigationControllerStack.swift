@@ -13,12 +13,17 @@ import RxCocoa
 
 class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
     
+    let disposeBad = DisposeBag()
+    
+    
     private var services: ViewModelService?
     private var navigationControllers: Array<UINavigationController>?
     
     init(_ services: ViewModelService) {
+        super.init()
         self.services = services
         self.navigationControllers = Array()
+        self.registerNavigationHooks()
     }
     
     func pushNavigationController(navigationController: UINavigationController) {
@@ -28,6 +33,8 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
         navigationController.delegate = self
         navigationControllers?.removeLast()
     }
+    
+//     func pushViewModel(viewModel: ViewModel, animated: Bool = true) {}
     
     func popNavigationController() -> UINavigationController {
         let navigationVC = navigationControllers?.last
@@ -40,7 +47,25 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
     }
     
     func registerNavigationHooks() {
-        
+        let serviceImp = self.services as! ViewModelServiceImp
+        serviceImp.onPrepareForAction.subscribe(onNext: { (params) in
+            switch params.type {
+            case .push:
+                let topVC = self.navigationControllers?.last?.topViewController as! BaseViewController
+                if topVC.tabBarController != nil {
+                    topVC.snapshot = topVC.tabBarController?.view.snapshotView(afterScreenUpdates: false)
+                } else {
+                    topVC.snapshot = self.navigationControllers?.last?.view.snapshotView(afterScreenUpdates: false)
+                }
+                let VC = viewControllerFromViewModel(viewModel: params.viewModel!)
+                VC.hidesBottomBarWhenPushed = true
+                self.navigationControllers?.last?.pushViewController(VC, animated: true)
+            case .pop:
+                self.navigationControllers?.last?.popViewController(animated: params.animate!)
+            default:
+                print("")
+            }
+        }).addDisposableTo(disposeBag)
     }
 }
 
