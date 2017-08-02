@@ -25,41 +25,36 @@ final class NetWork<T: ImmutableMappable> {
     
     func getItems(_ path: String) -> Observable<[T]> {
         let absolutePath = "\(endPoint)/\(path)"
-        return RxAlamofire
-            .json(.get, absolutePath)
-            .debug()
-            .observeOn(scheduler)
-            .map({ json -> [T] in
-                return try Mapper<T>().mapArray(JSONObject: json)
-            })
+        return operatorItems(.get, absolutePath)
     }
     
     func getItem(_ path: String, itemId: String) -> Observable<T> {
         let absolutePath = "\(endPoint)/\(path)/\(itemId)"
-        return RxAlamofire
-            .request(.get, absolutePath)
-            .debug()
-            .observeOn(scheduler)
-            .map({ json -> T in
-                return try Mapper<T>().map(JSONObject: json)
-            })
+        return operatorItem(.get, absolutePath)
     }
     
     func postItem(_ path: String, parameters: [String: Any]) -> Observable<T> {
         let absolutePath = "\(endPoint)/\(path)"
-        return RxAlamofire
-            .request(.post, absolutePath, parameters: parameters)
-            .debug()
-            .observeOn(scheduler)
-            .map({ json -> T in
-                return try Mapper<T>().map(JSONObject: json)
-            })
+        return operatorItem(.post, absolutePath, parameters: parameters)
     }
     
     func updateItem(_ path: String, itemId: String, parameters: [String: Any]) -> Observable<T> {
         let absolutePath = "\(endPoint)/\(path)/\(itemId)"
+        return operatorItem(.put, absolutePath, parameters: parameters)
+    }
+    
+    func deleteItem(_ path: String, itemId: String) -> Observable<T> {
+        let absolutePath = "\(endPoint)/\(path)/\(itemId)"
+        return operatorItem(.delete, absolutePath)
+    }
+    
+    private func operatorItem(_ method: Alamofire.HTTPMethod,
+                              _ url: URLConvertible,
+                              parameters: [String: Any]? = nil,
+                              headers: [String: String]? = nil)
+        -> Observable<T> {
         return RxAlamofire
-            .request(.put, absolutePath, parameters: parameters)
+            .request(method, url, parameters: parameters, encoding: URLEncoding.default, headers: headers)
             .debug()
             .observeOn(scheduler)
             .map({ json -> T in
@@ -67,14 +62,17 @@ final class NetWork<T: ImmutableMappable> {
             })
     }
     
-    func deleteItem(_ path: String, itemId: String) -> Observable<T> {
-        let absolutePath = "\(endPoint)/\(path)/\(itemId)"
-        return RxAlamofire
-            .request(.delete, absolutePath)
-            .debug()
-            .observeOn(scheduler)
-            .map({ json -> T in
-                return try Mapper<T>().map(JSONObject: json)
-            })
+    private func operatorItems(_ method: Alamofire.HTTPMethod,
+                              _ url: URLConvertible,
+                              parameters: [String: Any]? = nil,
+                              headers: [String: String]? = nil)
+        -> Observable<[T]> {
+            return RxAlamofire
+                .json(method, url, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+                .debug()
+                .observeOn(scheduler)
+                .map({ json -> [T] in
+                    return try Mapper<T>().mapArray(JSONObject: json)
+                })
     }
 }
