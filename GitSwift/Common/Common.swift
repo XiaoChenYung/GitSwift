@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 let APPDELEGATE = UIApplication.shared.delegate
+let BaseColor = "ff0000"
+
 
 

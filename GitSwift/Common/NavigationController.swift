@@ -19,6 +19,7 @@ class NavigationController: UINavigationController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
+        
         return (self.topViewController?.preferredStatusBarStyle)!
     }
 

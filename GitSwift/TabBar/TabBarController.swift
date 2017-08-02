@@ -23,7 +23,7 @@ class TabBarController: RAMAnimatedTabBarController {
         homeAni.animation = RAMBounceAnimation()
         navHome.tabBarItem = homeAni
         let dongtai = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.sendViewModel)!))
-        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "camera_32px_1174410_easyicon.net"), selectedImage: #imageLiteral(resourceName: "camera_48px_1174410_easyicon.net"))
+        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "home (2)"), selectedImage: #imageLiteral(resourceName: "camera_48px_1174410_easyicon.net"))
         dongtaiAni.animation = RAMFrameItemAnimation()
         dongtaiAni.yOffSet = 10
         dongtai.tabBarItem = dongtaiAni

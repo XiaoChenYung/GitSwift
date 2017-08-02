@@ -38,6 +38,7 @@
 		927390F11F1F4EDE006DB05F /* GitSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390F01F1F4EDE006DB05F /* GitSwiftUITests.swift */; };
 		927391061F1F5844006DB05F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391051F1F5844006DB05F /* View.swift */; };
 		927391081F1F5859006DB05F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927391071F1F5859006DB05F /* ViewModel.swift */; };
+		927F45E11F31756600084D57 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F45E01F31756600084D57 /* Utility.swift */; };
 		92A30FCA1F2F027C00512CD3 /* ViewModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FC91F2F027C00512CD3 /* ViewModelService.swift */; };
 		92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FCB1F2F040400512CD3 /* NavigationControllerStack.swift */; };
 		92A30FD01F2F063A00512CD3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A30FCF1F2F063A00512CD3 /* Common.swift */; };
@@ -177,6 +178,7 @@
 		927390F21F1F4EDE006DB05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927391051F1F5844006DB05F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		927391071F1F5859006DB05F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		927F45E01F31756600084D57 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		92A30FC91F2F027C00512CD3 /* ViewModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelService.swift; sourceTree = "<group>"; };
 		92A30FCB1F2F040400512CD3 /* NavigationControllerStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerStack.swift; sourceTree = "<group>"; };
 		92A30FCF1F2F063A00512CD3 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				92A30FCF1F2F063A00512CD3 /* Common.swift */,
+				927F45E01F31756600084D57 /* Utility.swift */,
 				92DC4F231F3072E100BBE4AA /* NavigationController.swift */,
 			);
 			path = Common;
@@ -1129,6 +1132,7 @@
 				92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */,
 				92DC4F161F30279500BBE4AA /* ViewRouter.swift in Sources */,
 				927391081F1F5859006DB05F /* ViewModel.swift in Sources */,
+				927F45E11F31756600084D57 /* Utility.swift in Sources */,
 				927391061F1F5844006DB05F /* View.swift in Sources */,
 				92DC4F221F30677700BBE4AA /* TabBarViewModel.swift in Sources */,
 				92A30FD21F2F0C1500512CD3 /* ViewControllerAnimatedTransition.swift in Sources */,
