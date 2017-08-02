@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 let APPDELEGATE = UIApplication.shared.delegate
-let BaseColor = "ff0000"
+let BaseColorString = "546f7a" //主色调
+let tabBarNormalColor = "888888" //底部导航正常色
+let BaseColor = UIColor(hex: BaseColorString)
 
 
 

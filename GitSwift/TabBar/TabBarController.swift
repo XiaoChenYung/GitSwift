@@ -17,18 +17,20 @@ class TabBarController: RAMAnimatedTabBarController {
 
         self.viewModel = viewModel as? TabBarViewModel
         let navHome = NavigationController(rootViewController: UserListViewController(viewModel: (self.viewModel?.homeViewModel)!))
-        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "camera_24px_1174410_easyicon.net"), selectedImage: #imageLiteral(resourceName: "camera_32px_1174410_easyicon.net"))
-        homeAni.textColor = UIColor.green
-        homeAni.iconColor = UIColor.yellow
+        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
+        homeAni.textColor = UIColor(hex: tabBarNormalColor)
+        homeAni.iconView?.icon.tintColor = BaseColor
+        homeAni.iconView?.textLabel.tintColor = BaseColor
         homeAni.animation = RAMBounceAnimation()
         navHome.tabBarItem = homeAni
         let dongtai = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.sendViewModel)!))
-        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "home (2)"), selectedImage: #imageLiteral(resourceName: "camera_48px_1174410_easyicon.net"))
+        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "news") , selectedImage: #imageLiteral(resourceName: "home"))
+        dongtaiAni.textColor = UIColor(hex: tabBarNormalColor)
         dongtaiAni.animation = RAMFrameItemAnimation()
-        dongtaiAni.yOffSet = 10
         dongtai.tabBarItem = dongtaiAni
         let me = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.meViewModel)!))
-        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "camera_24px_1174410_easyicon.net"), selectedImage: #imageLiteral(resourceName: "camera_32px_1174410_easyicon.net"))
+        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
+        meAni.textColor = UIColor(hex: tabBarNormalColor)
         meAni.animation = RAMRotationAnimation()
         me.tabBarItem = meAni
 //        self.viewControllers = [navHome]  

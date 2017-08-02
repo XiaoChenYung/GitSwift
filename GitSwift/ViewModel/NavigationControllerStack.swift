@@ -13,7 +13,7 @@ import RxCocoa
 
 class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
     
-    let disposeBad = DisposeBag()
+    let disposeBag = DisposeBag()
     
     
     private var services: ViewModelService?
