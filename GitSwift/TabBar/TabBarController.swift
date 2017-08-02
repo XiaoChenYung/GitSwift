@@ -17,21 +17,13 @@ class TabBarController: RAMAnimatedTabBarController {
 
         self.viewModel = viewModel as? TabBarViewModel
         let navHome = NavigationController(rootViewController: UserListViewController(viewModel: (self.viewModel?.homeViewModel)!))
-        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
-        homeAni.textColor = UIColor(hex: tabBarNormalColor)
-        homeAni.iconView?.icon.tintColor = BaseColor
-        homeAni.iconView?.textLabel.tintColor = BaseColor
-        homeAni.animation = RAMBounceAnimation()
+        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "news-nor"), selImage: #imageLiteral(resourceName: "news"))
         navHome.tabBarItem = homeAni
         let dongtai = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.sendViewModel)!))
-        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "news") , selectedImage: #imageLiteral(resourceName: "home"))
-        dongtaiAni.textColor = UIColor(hex: tabBarNormalColor)
-        dongtaiAni.animation = RAMFrameItemAnimation()
+        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "home-nor") , selImage: #imageLiteral(resourceName: "home"))
         dongtai.tabBarItem = dongtaiAni
         let me = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.meViewModel)!))
-        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
-        meAni.textColor = UIColor(hex: tabBarNormalColor)
-        meAni.animation = RAMRotationAnimation()
+        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "me"), selImage: #imageLiteral(resourceName: "me-nor"))
         me.tabBarItem = meAni
 //        self.viewControllers = [navHome]  
         super.init(viewControllers: [navHome, dongtai, me])
@@ -63,4 +55,21 @@ class TabBarController: RAMAnimatedTabBarController {
     }
     */
 
+}
+
+extension RAMAnimatedTabBarItem {
+    convenience init(title: String?, image: UIImage?, selImage: UIImage?) {
+        self.init(title: title, image: image, selectedImage: selImage)
+        textColor = UIColor(hex: tabBarNormalColor)
+        iconColor = UIColor(hex: tabBarNormalColor)
+        animation = RAMBounceAnimation(selColor: BaseColor)
+    }
+}
+
+extension RAMBounceAnimation {
+    convenience init (selColor: UIColor) {
+        self.init()
+        textSelectedColor = selColor
+        iconSelectedColor = selColor
+    }
 }
