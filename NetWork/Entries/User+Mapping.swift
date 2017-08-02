@@ -13,12 +13,12 @@ extension User: ImmutableMappable {
     
     // JSON -> Object
     public init(map: Map) throws {
-        address = try map.value("address")
-        company = try map.value("company")
-        email = try map.value("email")
-        name = try map.value("name")
+        address = try map.value("avatar_url")
+        company = try map.value("login")
+        email = try map.value("login")
+        name = try map.value("login")
         uid = try map.value("id")
-        username = try map.value("username")
-        website = try map.value("website")
+        username = try map.value("login")
+        website = try map.value("html_url")
     }
 }

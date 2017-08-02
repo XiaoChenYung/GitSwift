@@ -7,27 +7,54 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import SnapKit
+import Kingfisher
 
 class UserListViewController: BaseViewController {
+    
+    let disposedBag = DisposeBag()
+    
+    
+    let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let lable = UILabel()
-        lable.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-        lable.text = "哈哈哈哈"
-        lable.textColor = UIColor.red
-        lable.isUserInteractionEnabled = true
-        view.addSubview(lable)
         
-        let buttom = UIButton(type: UIButtonType.contactAdd)
-        view.addSubview(buttom)
-//        buttom.rx.tap.subscribe(onNext: <#T##((()) -> Void)?##((()) -> Void)?##(()) -> Void#>, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-        // Do any additional setup after loading the view.
+        tableView.refreshControl = UIRefreshControl()
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.width.equalTo(self.view.frame.width)
+            make.height.equalTo(self.view.frame.height)
+            make.center.equalToSuperview()
+        }
+        bindViewModel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func bindViewModel() {
+        assert(viewModel != nil)
+        let listViewModel = viewModel as! UserListViewModel
+        
+        
+        let input = UserListViewModel.Input(trigger: Driver.just(),
+                                         selection: tableView.rx.itemSelected.asDriver())
+        let output = listViewModel.transform(input: input)
+        //Bind Posts to UITableView
+        output.users.drive(tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { tv, item, cell in
+                cell.textLabel?.text = item.name
+                cell.imageView?.kf.setImage(with: URL(string: item.address))
+            }.addDisposableTo(disposedBag)
+        //Connect Create Post to UI
+        output.selectedPost.drive().addDisposableTo(disposedBag)
     }
     
 

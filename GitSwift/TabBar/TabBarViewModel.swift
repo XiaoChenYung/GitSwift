@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NetWork
 
 class TabBarViewModel: ViewModel {
     
@@ -14,8 +15,8 @@ class TabBarViewModel: ViewModel {
     var sendViewModel: ViewModel
     var meViewModel: ViewModel
     
-    override init(service: ViewModelService, params: Dictionary<String, Any>?) {
-        self.homeViewModel = UserListViewModel(service: service)
+    init(service: ViewModelService, params: Dictionary<String, Any>?) {
+        self.homeViewModel = UserListViewModel(service: service, params: nil, provider: NetWork.UseCaseProvider())
         self.meViewModel = ViewModel(service: service)
         self.sendViewModel = ViewModel(service: service)
         super.init(service: service, params: params)

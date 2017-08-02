@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol UseCaseProvider {
-    func makeAllUser() -> AllUserUseCase
+    func makeAllUserUseCase() -> AllUserUseCase
 }

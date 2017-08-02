@@ -19,6 +19,8 @@ target 'GitSwift' do
     rx_swift
     rx_cocoa
     pod 'RAMAnimatedTabBarController'
+    pod 'SnapKit'
+    pod 'Kingfisher'
     target 'GitSwiftTests' do
         inherit! :search_paths
         test_pods

@@ -14,7 +14,7 @@ public struct User {
     public let company: String
     public let email: String
     public let name: String
-    public let uid: String
+    public let uid: Int
     public let username: String
     public let website: String
     
@@ -23,7 +23,7 @@ public struct User {
                 email: String,
                 name: String,
                 phone: String,
-                uid: String,
+                uid: Int,
                 username: String,
                 website: String) {
         self.address = address
