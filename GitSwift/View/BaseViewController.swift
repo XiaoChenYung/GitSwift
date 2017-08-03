@@ -28,6 +28,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             snapshot = navigationController?.view.snapshotView(afterScreenUpdates: false)
         }
     }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +48,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         if navigationController != nil && self != navigationController?.viewControllers.first {
             let popRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePopRecognizer(recognizer:)))
             view.addGestureRecognizer(popRecognizer)
+            popRecognizer.delegate = self
         }
         // Do any additional setup after loading the view.
     }
@@ -43,6 +56,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     func handlePopRecognizer(recognizer: UIPanGestureRecognizer) {
         var progress = recognizer.translation(in: view).x / view.frame.width
         progress = min(1.0, max(0.0, progress))
+        print(progress)
         if recognizer.state == UIGestureRecognizerState.began {
             interactivePopTransition = UIPercentDrivenInteractiveTransition()
             navigationController?.popViewController(animated: true)
@@ -57,16 +71,14 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             interactivePopTransition = nil
         }
     }
+    private func gestureRecognizerShouldBegin(_ gestureRecognizer: UIPanGestureRecognizer) -> Bool {
+        print("llll")
+        return gestureRecognizer.velocity(in: view).x > 0
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-}
-
-extension BaseViewController {
-    @nonobjc func gestureRecognizerShouldBegin(_ gestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        return gestureRecognizer.velocity(in: view).x > 0
-    }
 }

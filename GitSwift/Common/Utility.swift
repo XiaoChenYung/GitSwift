@@ -31,7 +31,6 @@ extension UIColor {
         let sub: CGFloat = 255
         self.init(red: CGFloat(r)/sub, green: CGFloat(g)/sub, blue: CGFloat(b)/sub, alpha: 1.0)
     }
-    
 }
 
 class View: UIView {

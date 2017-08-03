@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreGraphics
+import RAMAnimatedTabBarController
 
 class ViewControllerAnimatedTransition:NSObject, UIViewControllerAnimatedTransitioning {
     
@@ -45,6 +45,39 @@ class ViewControllerAnimatedTransition:NSObject, UIViewControllerAnimatedTransit
                 transitionContext.completeTransition(true)
             })
         } else if operation == UINavigationControllerOperation.pop {
+            APPDELEGATE?.window??.backgroundColor = UIColor.black
+            fromVC.view.addSubview(fromVC.snapshot!)
+            let tabbar = fromVC.tabBarController as! RAMAnimatedTabBarController
+            let tabbarHidden = tabbar.isHidden
+            fromVC.navigationController?.navigationBar.isHidden = true
+            tabbar.animationTabBarHidden(true)
+            toVC.snapshot?.alpha = 0.5
+            toVC.snapshot?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            let toViewWrapperView = UIView(frame: transitionContext.containerView.bounds)
+            toViewWrapperView.addSubview(toVC.view)
+            toViewWrapperView.isHidden = true
+            transitionContext.containerView.addSubview(toViewWrapperView)
+            transitionContext.containerView.addSubview(toVC.snapshot!)
+            transitionContext.containerView.bringSubview(toFront: fromVC.view)
+            
+            UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: {
+                fromVC.view.frame = fromVC.view.frame.offsetBy(dx: fromVC.view.frame.width, dy: 0)
+                toVC.snapshot?.alpha = 1
+                toVC.snapshot?.transform = CGAffineTransform.identity
+            }, completion: { (finished) in
+                APPDELEGATE?.window??.backgroundColor = UIColor.white
+                toVC.navigationController?.navigationBar.isHidden = false
+                tabbar.animationTabBarHidden(tabbarHidden)
+                fromVC.snapshot?.removeFromSuperview()
+            toVC.snapshot?.removeFromSuperview()
+                toViewWrapperView.removeFromSuperview()
+                if !transitionContext.transitionWasCancelled {
+                    for subview in toViewWrapperView.subviews {
+                        transitionContext.containerView.addSubview(subview)
+                    }
+                 }
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            })
             
         }
         

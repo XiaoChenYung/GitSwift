@@ -125,6 +125,8 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
 }
 
 extension  RAMAnimatedTabBarController {
+    
+    
   
   /**
    Change selected color for each UITabBarItem
@@ -153,6 +155,7 @@ extension  RAMAnimatedTabBarController {
     - parameter isHidden: A Boolean indicating whether the UITabBarController is displayed
    */
   open func animationTabBarHidden(_ isHidden:Bool) {
+    self.isHidden = isHidden
     guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
       fatalError("items must inherit RAMAnimatedTabBarItem")
     }
@@ -189,6 +192,7 @@ extension  RAMAnimatedTabBarController {
 /// UITabBarController with item animations
 open class RAMAnimatedTabBarController: UITabBarController {
   
+  public var isHidden: Bool = false
   fileprivate var didInit: Bool = false
   fileprivate var didLoadView: Bool = false
   

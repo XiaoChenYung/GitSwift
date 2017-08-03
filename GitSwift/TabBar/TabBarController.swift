@@ -28,7 +28,7 @@ class TabBarController: RAMAnimatedTabBarController {
 //        self.viewControllers = [navHome]  
         super.init(viewControllers: [navHome, dongtai, me])
         let app = APPDELEGATE as! AppDelegate
-        app.navigationControllerStack?.pushNavigationController(navigationController: navHome)
+        app.navigationControllerStack?.pushNavigationController(navigationController: self.viewControllers?.first as! NavigationController)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +37,7 @@ class TabBarController: RAMAnimatedTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

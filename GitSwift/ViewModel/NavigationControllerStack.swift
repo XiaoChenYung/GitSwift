@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import RAMAnimatedTabBarController
 
-class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
+class NavigationControllerStack: NSObject {
     
     let disposeBag = DisposeBag()
     
@@ -34,7 +35,7 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
         navigationControllers?.append(navigationController)
     }
     
-//     func pushViewModel(viewModel: ViewModel, animated: Bool = true) {}
+    //     func pushViewModel(viewModel: ViewModel, animated: Bool = true) {}
     
     func popNavigationController() -> UINavigationController {
         let navigationVC = navigationControllers?.last
@@ -58,24 +59,39 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
                     topVC.snapshot = self.navigationControllers?.last?.view.snapshotView(afterScreenUpdates: false)
                 }
                 let VC = viewControllerFromViewModel(viewModel: params.viewModel)
-                VC.hidesBottomBarWhenPushed = true
+                let tabbarVC = self.navigationControllers?.last?.tabBarController as! RAMAnimatedTabBarController
+                tabbarVC.animationTabBarHidden(true)
                 self.navigationControllers?.last?.pushViewController(VC, animated: true)
             case .pop:
                 self.navigationControllers?.last?.popViewController(animated: params.animate!)
+                if self.navigationControllers?.last?.viewControllers.count == 1 {
+                    let tabbarVC = self.navigationControllers?.last?.tabBarController as! RAMAnimatedTabBarController
+                    tabbarVC.animationTabBarHidden(false)
+                }
             case .reset:
                 APPDELEGATE?.window??.rootViewController = viewControllerFromViewModel(viewModel: params.viewModel)
             default:
-                print("")
+                print("刚刚刚刚刚")
             }
         }).addDisposableTo(disposeBag)
     }
 }
 
-extension NavigationControllerStack {
-    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: ViewControllerAnimatedTransition) -> UIViewControllerInteractiveTransitioning? {
+extension NavigationControllerStack: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        print("显示了")
+    }
+    
+    private func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: ViewControllerAnimatedTransition) -> UIViewControllerInteractiveTransitioning? {
         return animationController.fromViewController.interactivePopTransition
     }
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: BaseViewController, to toVC: BaseViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    private func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: BaseViewController, to toVC: BaseViewController) -> UIViewControllerAnimatedTransitioning? {
         if fromVC.interactivePopTransition != nil {
             return ViewControllerAnimatedTransition(operation, fromVC, toVC)
         }

@@ -15,8 +15,7 @@ import Kingfisher
 class UserListViewController: BaseViewController {
     
     let disposedBag = DisposeBag()
-    
-    
+        
     let tableView = UITableView()
 
     override func viewDidLoad() {
@@ -43,7 +42,6 @@ class UserListViewController: BaseViewController {
     private func bindViewModel() {
         assert(viewModel != nil)
         let listViewModel = viewModel as! UserListViewModel
-        
         
         let input = UserListViewModel.Input(trigger: Driver.just(),
                                          selection: tableView.rx.itemSelected.asDriver())
