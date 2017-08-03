@@ -71,10 +71,17 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             interactivePopTransition = nil
         }
     }
-    private func gestureRecognizerShouldBegin(_ gestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        print("llll")
-        return gestureRecognizer.velocity(in: view).x > 0
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let panGes = gestureRecognizer as! UIPanGestureRecognizer
+        
+        return panGes.velocity(in: view).x > 0
     }
+    
+//    private func gestureRecognizerShouldBegin(_ gestureRecognizer: UIPanGestureRecognizer) -> Bool {
+//        print("llll")
+//        return gestureRecognizer.velocity(in: view).x > 0
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import RAMAnimatedTabBarController
 
-class NavigationControllerStack: NSObject {
+class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
     
     let disposeBag = DisposeBag()
     
@@ -75,9 +75,6 @@ class NavigationControllerStack: NSObject {
             }
         }).addDisposableTo(disposeBag)
     }
-}
-
-extension NavigationControllerStack: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         
@@ -87,14 +84,28 @@ extension NavigationControllerStack: UINavigationControllerDelegate {
         print("显示了")
     }
     
-    private func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: ViewControllerAnimatedTransition) -> UIViewControllerInteractiveTransitioning? {
-        return animationController.fromViewController.interactivePopTransition
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        let ani = animationController as! ViewControllerAnimatedTransition
+        return ani.fromViewController.interactivePopTransition
     }
-
-    private func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: BaseViewController, to toVC: BaseViewController) -> UIViewControllerAnimatedTransitioning? {
-        if fromVC.interactivePopTransition != nil {
-            return ViewControllerAnimatedTransition(operation, fromVC, toVC)
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let fromViewController = fromVC as! BaseViewController
+        let toViewController = toVC as! BaseViewController
+        if fromViewController.interactivePopTransition != nil {
+            return ViewControllerAnimatedTransition(operation, fromViewController, toViewController)
         }
         return nil
     }
+    
+//    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: ViewControllerAnimatedTransition) -> UIViewControllerInteractiveTransitioning? {
+//        return animationController.fromViewController.interactivePopTransition
+//    }
+//    
+//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: BaseViewController, to toVC: BaseViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if fromVC.interactivePopTransition != nil {
+//            return ViewControllerAnimatedTransition(operation, fromVC, toVC)
+//        }
+//        return nil
+//    }
 }
