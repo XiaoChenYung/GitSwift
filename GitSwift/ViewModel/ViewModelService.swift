@@ -31,7 +31,7 @@ protocol ViewModelService {
 
 class ViewModelServiceImp: NSObject, ViewModelService {
     let onPrepareForAction = PublishSubject<VCActionParams>()
-    public func pushViewModel(viewModel: ViewModel, animated: Bool = true) {
+    func pushViewModel(viewModel: ViewModel, animated: Bool = true) {
         onPrepareForAction.onNext(VCActionParams(type: .push, viewModel: viewModel, animate: animated, completion: nil))
     }
     func popViewModel(animated: Bool = true) {

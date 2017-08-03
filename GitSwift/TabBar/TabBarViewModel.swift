@@ -15,10 +15,10 @@ class TabBarViewModel: ViewModel {
     var sendViewModel: ViewModel
     var meViewModel: ViewModel
     
-    init(service: ViewModelService, params: Dictionary<String, Any>?) {
-        self.homeViewModel = UserListViewModel(service: service, params: nil, provider: NetWork.UseCaseProvider())
-        self.meViewModel = ViewModel(service: service)
-        self.sendViewModel = ViewModel(service: service)
-        super.init(service: service, params: params)
+    init(service: ViewModelServiceImp, params: Dictionary<String, Any>?) {
+        self.homeViewModel = UserListViewModel(service: service , params: nil, provider: NetWork.UseCaseProvider())
+        self.meViewModel = ViewModel(service: service )
+        self.sendViewModel = ViewModel(service: service )
+        super.init(service: service , params: params)
     }
 }

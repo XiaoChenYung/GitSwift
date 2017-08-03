@@ -16,6 +16,10 @@ import UIKit
             return UserListViewController(viewModel: viewModel!)
         } else if viewModel!.isMember(of: TabBarViewModel.self) {
             return TabBarController(viewModel: viewModel!)
+        } else if viewModel!.isMember(of: LoginViewModel.self) {
+            let loginVC = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            loginVC.viewModel = viewModel
+            return loginVC
         }
         return BaseViewController(viewModel: viewModel!)
     }

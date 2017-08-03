@@ -27,6 +27,8 @@ class TabBarController: RAMAnimatedTabBarController {
         me.tabBarItem = meAni
 //        self.viewControllers = [navHome]  
         super.init(viewControllers: [navHome, dongtai, me])
+        let app = APPDELEGATE as! AppDelegate
+        app.navigationControllerStack?.pushNavigationController(navigationController: navHome)
     }
     
     required init?(coder aDecoder: NSCoder) {

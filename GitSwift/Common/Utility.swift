@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreGraphics
 
 extension UIColor {
     convenience init(hex: String) {
@@ -29,6 +30,24 @@ extension UIColor {
         Scanner(string: bString).scanHexInt32(&b)
         let sub: CGFloat = 255
         self.init(red: CGFloat(r)/sub, green: CGFloat(g)/sub, blue: CGFloat(b)/sub, alpha: 1.0)
+    }
+    
+}
+
+class View: UIView {
+    
+}
+
+extension UIView {
+    
+    func drawBottomLine(color: UIColor? = UIColor(hex: "f3f3f3")) {
+        let context = UIGraphicsGetCurrentContext()
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: frame.height - 0.5))
+        path.addLine(to: CGPoint(x: frame.width, y: frame.height - 0.5))
+        context?.addPath(path)
+        context?.setStrokeColor((color?.cgColor)!)
+        context?.setFillColor((color?.cgColor)!)
     }
     
 }

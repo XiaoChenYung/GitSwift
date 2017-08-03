@@ -31,7 +31,7 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
             return
         }
         navigationController.delegate = self
-        navigationControllers?.removeLast()
+        navigationControllers?.append(navigationController)
     }
     
 //     func pushViewModel(viewModel: ViewModel, animated: Bool = true) {}

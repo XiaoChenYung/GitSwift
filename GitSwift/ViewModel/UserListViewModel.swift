@@ -14,6 +14,14 @@ import NetWork
 
 class UserListViewModel: ViewModel, ViewModelType {
     
+    var loginViewModel: LoginViewModel
+    
+    override init(service: ViewModelServiceImp, params: Dictionary<String, Any>?, provider: Domain.UseCaseProvider?) {
+        self.loginViewModel = LoginViewModel(service: service)
+        super.init(service: service, params: params, provider: provider)
+    }
+    
+    
     struct Input {
         let trigger: Driver<Void>
         let selection: Driver<IndexPath>
@@ -46,7 +54,9 @@ class UserListViewModel: ViewModel, ViewModelType {
         let errors = errorTracker.asDriver()
         let selectedUser = input.selection.withLatestFrom(users) { (indexPath, users) -> User in
             return users[indexPath.row]
-        }
+        }.do(onNext: { [unowned self] (user) in
+            self.service.pushViewModel(viewModel: self.loginViewModel)
+        })
         return Output(fetching: fetching, users: users, selectedPost: selectedUser, error: errors)
     }
 }

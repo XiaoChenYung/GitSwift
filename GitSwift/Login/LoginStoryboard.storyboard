@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="uiN-4x-zPO">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="OII-lL-0hq" customClass="LoginViewController" customModule="GitSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="edj-qr-edN"/>
+                        <viewControllerLayoutGuide type="bottom" id="AHm-Iq-Rs7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NqX-wi-Cur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-ys-jKj">
+                                <rect key="frame" x="22" y="20" width="119" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="q4H-8l-tSS"/>
+                                    <constraint firstAttribute="height" constant="84" id="sj2-fx-3Sb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ylJ-ys-jKj" firstAttribute="top" secondItem="edj-qr-edN" secondAttribute="bottom" id="AJF-rc-b1m"/>
+                            <constraint firstItem="ylJ-ys-jKj" firstAttribute="leading" secondItem="NqX-wi-Cur" secondAttribute="leadingMargin" constant="6" id="aoj-lJ-EWB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testView" destination="ylJ-ys-jKj" id="bEq-UI-vpC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drp-5r-LOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2000000000000002" y="-87.706146926536732"/>
+        </scene>
+    </scenes>
+</document>

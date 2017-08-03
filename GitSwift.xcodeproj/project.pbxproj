@@ -30,6 +30,9 @@
 		4BD1067430DEB23EB78F5EC6 /* Pods_GitSwift_GitSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9046370BCCBC4E77F48C2F08 /* Pods_GitSwift_GitSwiftTests.framework */; };
 		6D8F6FD828A9E6EC964C429A /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D4DCE4627619A7914AD7FA /* Pods_DomainTests.framework */; };
 		8B8040E5A40525FAB7E89DD4 /* Pods_Domain_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F015B6CED469E70417A54961 /* Pods_Domain_DomainTests.framework */; };
+		922758791F32B3BA00067F30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922758781F32B3BA00067F30 /* LoginViewModel.swift */; };
+		9227587B1F32B82A00067F30 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */; };
+		9227587D1F32CC4D00067F30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227587C1F32CC4D00067F30 /* LoginViewController.swift */; };
 		927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D01F1F4EDE006DB05F /* AppDelegate.swift */; };
 		927390D81F1F4EDE006DB05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927390D71F1F4EDE006DB05F /* Assets.xcassets */; };
 		927390DB1F1F4EDE006DB05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927390D91F1F4EDE006DB05F /* LaunchScreen.storyboard */; };
@@ -169,6 +172,9 @@
 		850E25219755C5FB3F322BEA /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		863DB13DA176C2AD8C02B099 /* Pods-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
 		9046370BCCBC4E77F48C2F08 /* Pods_GitSwift_GitSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitSwift_GitSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		922758781F32B3BA00067F30 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		9227587C1F32CC4D00067F30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		927390CD1F1F4EDE006DB05F /* GitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927390D01F1F4EDE006DB05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927390D71F1F4EDE006DB05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -375,6 +381,16 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		922758771F32B38A00067F30 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				922758781F32B3BA00067F30 /* LoginViewModel.swift */,
+				9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */,
+				9227587C1F32CC4D00067F30 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		927390C41F1F4EDE006DB05F = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +424,7 @@
 		927390CF1F1F4EDE006DB05F /* GitSwift */ = {
 			isa = PBXGroup;
 			children = (
+				922758771F32B38A00067F30 /* Login */,
 				927F45E61F31C4E100084D57 /* Utility */,
 				92DC4F1C1F30645000BBE4AA /* Home */,
 				92DC4F1D1F30645000BBE4AA /* Me */,
@@ -839,6 +856,7 @@
 				927F45E31F31BB8C00084D57 /* UserList.storyboard in Resources */,
 				927390DB1F1F4EDE006DB05F /* LaunchScreen.storyboard in Resources */,
 				927390D81F1F4EDE006DB05F /* Assets.xcassets in Resources */,
+				9227587B1F32B82A00067F30 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,6 +1163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9227587D1F32CC4D00067F30 /* LoginViewController.swift in Sources */,
 				92A30FD41F2F0C5D00512CD3 /* BaseViewController.swift in Sources */,
 				92DC4F201F3064B800BBE4AA /* TabBarController.swift in Sources */,
 				92A30FD01F2F063A00512CD3 /* Common.swift in Sources */,
@@ -1153,6 +1172,7 @@
 				92E8C2E11F2B1EDC00983657 /* UserListViewModel.swift in Sources */,
 				92DC4F181F30547800BBE4AA /* UserListViewController.swift in Sources */,
 				927F45EC1F31C4E100084D57 /* ErrorTracker.swift in Sources */,
+				922758791F32B3BA00067F30 /* LoginViewModel.swift in Sources */,
 				92DC4F241F3072E100BBE4AA /* NavigationController.swift in Sources */,
 				927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */,
 				92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */,
