@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.service = ViewModelServiceImp()
         self.navigationControllerStack = NavigationControllerStack(services: service!)
         self.service?.resetRootViewModel(viewModel: createInitialViewModel())
-        self.window?.makeKeyAndVisible()
+        self.window?.makeKeyAndVisible()        
         return true
     }
     

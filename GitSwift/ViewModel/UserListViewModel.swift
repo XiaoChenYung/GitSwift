@@ -17,8 +17,9 @@ class UserListViewModel: ViewModel, ViewModelType {
     var loginViewModel: LoginViewModel
     
     override init(service: ViewModelServiceImp, params: Dictionary<String, Any>?, provider: Domain.UseCaseProvider?) {
-        self.loginViewModel = LoginViewModel(service: service)
+        self.loginViewModel = LoginViewModel(service: service, params: params, provider: provider)
         super.init(service: service, params: params, provider: provider)
+        self.title.value = "用户列表"
     }
     
     

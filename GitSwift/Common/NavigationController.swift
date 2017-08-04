@@ -12,7 +12,10 @@ class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.setBackgroundImage(UIImage.imageWithColor(color: BaseColor), for: UIBarMetrics.default)
+//        navigationBar.setBackgroundImage(UIImage.imageWithColor(color: BaseColor), for: UIBarMetrics.default)
+        navigationBar.barTintColor = BaseColor
+        navigationBar.barStyle = .black
+        navigationBar.tintColor = UIColor.white
     }
     
     override var shouldAutorotate: Bool {

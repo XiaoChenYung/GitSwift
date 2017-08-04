@@ -33,6 +33,7 @@
 		922758791F32B3BA00067F30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922758781F32B3BA00067F30 /* LoginViewModel.swift */; };
 		9227587B1F32B82A00067F30 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */; };
 		9227587D1F32CC4D00067F30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227587C1F32CC4D00067F30 /* LoginViewController.swift */; };
+		924CAC6D1F3424B70094452F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CAC6C1F3424B70094452F /* UIView+Ext.swift */; };
 		927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927390D01F1F4EDE006DB05F /* AppDelegate.swift */; };
 		927390D81F1F4EDE006DB05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927390D71F1F4EDE006DB05F /* Assets.xcassets */; };
 		927390DB1F1F4EDE006DB05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927390D91F1F4EDE006DB05F /* LaunchScreen.storyboard */; };
@@ -175,6 +176,7 @@
 		922758781F32B3BA00067F30 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		9227587C1F32CC4D00067F30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		924CAC6C1F3424B70094452F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		927390CD1F1F4EDE006DB05F /* GitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927390D01F1F4EDE006DB05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927390D71F1F4EDE006DB05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			children = (
 				92A30FCF1F2F063A00512CD3 /* Common.swift */,
 				927F45E01F31756600084D57 /* Utility.swift */,
+				924CAC6C1F3424B70094452F /* UIView+Ext.swift */,
 				92DC4F231F3072E100BBE4AA /* NavigationController.swift */,
 			);
 			path = Common;
@@ -1175,6 +1178,7 @@
 				922758791F32B3BA00067F30 /* LoginViewModel.swift in Sources */,
 				92DC4F241F3072E100BBE4AA /* NavigationController.swift in Sources */,
 				927390D11F1F4EDE006DB05F /* AppDelegate.swift in Sources */,
+				924CAC6D1F3424B70094452F /* UIView+Ext.swift in Sources */,
 				92A30FCC1F2F040400512CD3 /* NavigationControllerStack.swift in Sources */,
 				92DC4F161F30279500BBE4AA /* ViewRouter.swift in Sources */,
 				927391081F1F5859006DB05F /* ViewModel.swift in Sources */,

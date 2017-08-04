@@ -8,8 +8,12 @@
 
 import UIKit
 import RAMAnimatedTabBarController
+import RxSwift
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    let disposeBag = DisposeBag()
+    
     
     public var snapshot: UIView?
     public var interactivePopTransition: UIPercentDrivenInteractiveTransition?
@@ -59,7 +63,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             view.addGestureRecognizer(popRecognizer)
             popRecognizer.delegate = self
         }
+        bindViewModel()
         // Do any additional setup after loading the view.
+    }
+    
+    func bindViewModel() {
+        viewModel?.title.asObservable()
+        .subscribe(onNext: { [unowned self] (title) in
+            self.navigationItem.title = title
+        }).addDisposableTo(disposeBag)
     }
     
     func handlePopRecognizer(recognizer: UIPanGestureRecognizer) {

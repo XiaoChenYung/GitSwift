@@ -9,8 +9,14 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import Domain
 
 class LoginViewModel: ViewModel {
+    
+    override init(service: ViewModelServiceImp, params: Dictionary<String, Any>?, provider: Domain.UseCaseProvider?) {
+        super.init(service: service, params: params, provider: provider)
+        self.title.value = "登陆"
+    }
     
     struct Input {
         let trigger: Driver<Void>

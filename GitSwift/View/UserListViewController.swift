@@ -31,7 +31,6 @@ class UserListViewController: BaseViewController {
             make.height.equalTo(self.view.frame.height)
             make.center.equalToSuperview()
         }
-        bindViewModel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +38,8 @@ class UserListViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func bindViewModel() {
+    override func bindViewModel() {
+        super.bindViewModel()
         assert(viewModel != nil)
         let listViewModel = viewModel as! UserListViewModel
         
