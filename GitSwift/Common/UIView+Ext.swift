@@ -91,8 +91,8 @@ extension UIView {
         context?.addLine(to: CGPoint(x: frame.width, y: frame.height - UnderLineHeight))
         
         context?.setLineWidth(UnderLineHeight)
-        context?.setStrokeColor((BaseGrayColor.cgColor))
-        context?.setFillColor((BaseGrayColor.cgColor))
+        context?.setStrokeColor((UIColor.white.cgColor))
+        context?.setFillColor((UIColor.white.cgColor))
         context?.drawPath(using: .fillStroke)
     }
     

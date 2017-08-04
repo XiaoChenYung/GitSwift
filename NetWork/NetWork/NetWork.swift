@@ -53,8 +53,16 @@ final class NetWork<T: ImmutableMappable> {
                               parameters: [String: Any]? = nil,
                               headers: [String: String]? = nil)
         -> Observable<T> {
+            var finalHeaders: [String: String]?
+            if headers == nil {
+                finalHeaders = ["Accept": "application/vnd.github.v3+json"]
+            } else {
+                finalHeaders = headers
+                finalHeaders?["Accept"] = "application/vnd.github.v3+json"
+            }
+            
         return RxAlamofire
-            .request(method, url, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .request(method, url, parameters: parameters, encoding: URLEncoding.default, headers: finalHeaders)
             .debug()
             .observeOn(scheduler)
             .map({ json -> T in
@@ -67,8 +75,15 @@ final class NetWork<T: ImmutableMappable> {
                               parameters: [String: Any]? = nil,
                               headers: [String: String]? = nil)
         -> Observable<[T]> {
+            var finalHeaders: [String: String]?
+            if headers == nil {
+                finalHeaders = ["Accept": "application/vnd.github.v3+json"]
+            } else {
+                finalHeaders = headers
+                finalHeaders?["Accept"] = "application/vnd.github.v3+json"
+            }
             return RxAlamofire
-                .json(method, url, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+                .json(method, url, parameters: parameters, encoding: URLEncoding.default, headers: finalHeaders)
                 .debug()
                 .observeOn(scheduler)
                 .map({ json -> [T] in

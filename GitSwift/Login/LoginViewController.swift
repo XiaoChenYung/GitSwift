@@ -10,12 +10,15 @@ import UIKit
 
 class LoginViewController: BaseViewController {
 
-    
+    @IBOutlet weak var passwordTextField: UnderLineTextField!
+    @IBOutlet weak var usernameTextField: UnderLineTextField!
+    @IBOutlet weak var loginButton: RadiusButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         // Do any additional setup after loading the view.
     }
 

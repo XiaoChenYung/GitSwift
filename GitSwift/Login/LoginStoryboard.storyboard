@@ -126,6 +126,11 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="loginButton" destination="JDv-zd-9gY" id="6xx-O9-Qv9"/>
+                        <outlet property="passwordTextField" destination="hVU-ZO-ztP" id="ZiW-RN-CYE"/>
+                        <outlet property="usernameTextField" destination="QQY-Cc-VzN" id="XZv-97-VHA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drp-5r-LOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,7 +138,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="github-logo" width="25" height="25"/>
+        <image name="github-logo" width="60" height="60"/>
         <image name="login_bg" width="360" height="640"/>
     </resources>
 </document>
