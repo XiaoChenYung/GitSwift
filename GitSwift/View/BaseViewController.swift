@@ -56,7 +56,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     func handlePopRecognizer(recognizer: UIPanGestureRecognizer) {
         var progress = recognizer.translation(in: view).x / view.frame.width
         progress = min(1.0, max(0.0, progress))
-        print(progress)
         if recognizer.state == UIGestureRecognizerState.began {
             interactivePopTransition = UIPercentDrivenInteractiveTransition()
             navigationController?.popViewController(animated: true)
