@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func createInitialViewModel() -> ViewModel {
-        return TabBarViewModel(service: self.service!, params: nil)
+//        return TabBarViewModel(service: self.service!, params: nil)
+        return LoginViewModel(service: service!, params: nil, provider: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

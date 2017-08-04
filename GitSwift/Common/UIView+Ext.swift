@@ -67,16 +67,33 @@ class UnderLineTextField: UITextField {
     }
 }
 
+class RadiusButton: UIButton {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.cornerRadius = 2
+        clipsToBounds = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layer.cornerRadius = 2
+        clipsToBounds = true
+    }
+    
+}
+
 extension UIView {
     
     func drawUnderLine() {
         let context = UIGraphicsGetCurrentContext()
-        context?.move(to: CGPoint(x: 0, y: frame.height - 5))
-        context?.addLine(to: CGPoint(x: frame.width, y: frame.height - 5))
+        context?.move(to: CGPoint(x: 0, y: frame.height - UnderLineHeight))
+        context?.addLine(to: CGPoint(x: frame.width, y: frame.height - UnderLineHeight))
         
-        context?.setLineWidth(5)
-        context?.setStrokeColor((tabBarNormalColor.cgColor))
-        context?.setFillColor((tabBarNormalColor.cgColor))
+        context?.setLineWidth(UnderLineHeight)
+        context?.setStrokeColor((BaseGrayColor.cgColor))
+        context?.setFillColor((BaseGrayColor.cgColor))
         context?.drawPath(using: .fillStroke)
     }
+    
 }

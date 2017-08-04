@@ -62,8 +62,8 @@ class TabBarController: RAMAnimatedTabBarController {
 extension RAMAnimatedTabBarItem {
     convenience init(title: String?, image: UIImage?, selImage: UIImage?) {
         self.init(title: title, image: image, selectedImage: selImage)
-        textColor = tabBarNormalColor
-        iconColor = tabBarNormalColor
+        textColor = BaseGrayColor
+        iconColor = BaseGrayColor
         animation = RAMBounceAnimation(selColor: BaseColor)
     }
 }

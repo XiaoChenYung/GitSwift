@@ -10,11 +10,11 @@ import UIKit
 
 class LoginViewController: BaseViewController {
 
-    @IBOutlet weak var testView: UnderLineView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testView.backgroundColor = UIColor.red
+        
 
         // Do any additional setup after loading the view.
     }

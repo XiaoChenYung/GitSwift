@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,28 +23,117 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-ys-jKj" customClass="UnderLineView" customModule="GitSwift" customModuleProvider="target">
-                                <rect key="frame" x="22" y="20" width="119" height="84"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ung-Nd-Wf4">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kak-mE-ji9">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13E-Sh-OU4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-logo" translatesAutoresizingMaskIntoConstraints="NO" id="IaE-bg-mls">
+                                        <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IaE-bg-mls" secondAttribute="height" multiplier="1:1" id="Vpd-b3-rjp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYn-S9-Q43">
+                                        <rect key="frame" x="67" y="10" width="131" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="131" id="8D3-Yd-KzS"/>
+                                            <constraint firstAttribute="height" constant="41" id="fwz-5r-N3K"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="119" id="q4H-8l-tSS"/>
-                                    <constraint firstAttribute="height" constant="84" id="sj2-fx-3Sb"/>
+                                    <constraint firstItem="IaE-bg-mls" firstAttribute="leading" secondItem="13E-Sh-OU4" secondAttribute="leading" constant="8" id="87D-6Q-jiF"/>
+                                    <constraint firstItem="JYn-S9-Q43" firstAttribute="leading" secondItem="IaE-bg-mls" secondAttribute="trailing" constant="15" id="CXa-8R-etK"/>
+                                    <constraint firstItem="JYn-S9-Q43" firstAttribute="centerY" secondItem="13E-Sh-OU4" secondAttribute="centerY" id="OXo-64-IkG"/>
+                                    <constraint firstAttribute="bottom" secondItem="IaE-bg-mls" secondAttribute="bottom" constant="8" id="PLC-pb-K7g"/>
+                                    <constraint firstAttribute="height" constant="60" id="RA8-td-bgO"/>
+                                    <constraint firstItem="IaE-bg-mls" firstAttribute="top" secondItem="13E-Sh-OU4" secondAttribute="top" constant="8" id="zrF-yu-ndX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hay-fC-PyI">
+                                <rect key="frame" x="-0.5" y="100" width="375" height="153"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQY-Cc-VzN" customClass="UnderLineTextField" customModule="GitSwift" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="0.0" width="299" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="SRj-sm-de6"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-zd-9gY" customClass="RadiusButton" customModule="GitSwift" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="118" width="299" height="35"/>
+                                        <color key="backgroundColor" red="0.32941176470588235" green="0.43529411764705883" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="f3N-1o-0C7"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-ZO-ztP" customClass="UnderLineTextField" customModule="GitSwift" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="44" width="299" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="EWn-ij-q9Z"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JDv-zd-9gY" secondAttribute="trailing" constant="38" id="5lT-RG-cik"/>
+                                    <constraint firstItem="QQY-Cc-VzN" firstAttribute="top" secondItem="Hay-fC-PyI" secondAttribute="top" id="CSB-Ak-QIc"/>
+                                    <constraint firstItem="QQY-Cc-VzN" firstAttribute="leading" secondItem="Hay-fC-PyI" secondAttribute="leading" constant="38" id="Fms-7l-uKt"/>
+                                    <constraint firstAttribute="bottom" secondItem="JDv-zd-9gY" secondAttribute="bottom" id="JnS-wY-Yik"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQY-Cc-VzN" secondAttribute="trailing" constant="38" id="POy-jk-g4v"/>
+                                    <constraint firstItem="JDv-zd-9gY" firstAttribute="leading" secondItem="Hay-fC-PyI" secondAttribute="leading" constant="38" id="Thf-oc-dXX"/>
+                                    <constraint firstItem="hVU-ZO-ztP" firstAttribute="leading" secondItem="Hay-fC-PyI" secondAttribute="leading" constant="38" id="V9X-xZ-0VN"/>
+                                    <constraint firstItem="hVU-ZO-ztP" firstAttribute="top" secondItem="QQY-Cc-VzN" secondAttribute="bottom" id="aEb-AE-x0l"/>
+                                    <constraint firstAttribute="height" constant="153" id="cTc-td-lH6"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVU-ZO-ztP" secondAttribute="trailing" constant="38" id="ryr-YL-6Sd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ylJ-ys-jKj" firstAttribute="top" secondItem="edj-qr-edN" secondAttribute="bottom" id="AJF-rc-b1m"/>
-                            <constraint firstItem="ylJ-ys-jKj" firstAttribute="leading" secondItem="NqX-wi-Cur" secondAttribute="leadingMargin" constant="6" id="aoj-lJ-EWB"/>
+                            <constraint firstItem="ung-Nd-Wf4" firstAttribute="width" secondItem="NqX-wi-Cur" secondAttribute="width" id="44T-n2-PGk"/>
+                            <constraint firstItem="Kak-mE-ji9" firstAttribute="height" secondItem="ung-Nd-Wf4" secondAttribute="height" id="94e-Pr-FdC"/>
+                            <constraint firstItem="Hay-fC-PyI" firstAttribute="centerX" secondItem="NqX-wi-Cur" secondAttribute="centerX" id="CHP-z4-YhV"/>
+                            <constraint firstItem="ung-Nd-Wf4" firstAttribute="height" secondItem="NqX-wi-Cur" secondAttribute="height" id="CUB-gb-Mbb"/>
+                            <constraint firstItem="Hay-fC-PyI" firstAttribute="top" secondItem="NqX-wi-Cur" secondAttribute="topMargin" constant="100" id="DIQ-tc-qlg"/>
+                            <constraint firstItem="ung-Nd-Wf4" firstAttribute="centerY" secondItem="NqX-wi-Cur" secondAttribute="centerY" id="Ey9-Hg-cck"/>
+                            <constraint firstItem="ung-Nd-Wf4" firstAttribute="centerX" secondItem="NqX-wi-Cur" secondAttribute="centerX" id="HjJ-Co-P3w"/>
+                            <constraint firstItem="13E-Sh-OU4" firstAttribute="top" secondItem="edj-qr-edN" secondAttribute="bottom" id="PsQ-TD-Dtq"/>
+                            <constraint firstItem="Hay-fC-PyI" firstAttribute="width" secondItem="NqX-wi-Cur" secondAttribute="width" id="UIQ-ny-kU7"/>
+                            <constraint firstItem="Kak-mE-ji9" firstAttribute="centerY" secondItem="ung-Nd-Wf4" secondAttribute="centerY" id="UNB-zd-RtP"/>
+                            <constraint firstItem="Kak-mE-ji9" firstAttribute="centerX" secondItem="ung-Nd-Wf4" secondAttribute="centerX" id="fCz-Gk-X9R"/>
+                            <constraint firstAttribute="trailing" secondItem="13E-Sh-OU4" secondAttribute="trailing" id="jRI-w1-IL0"/>
+                            <constraint firstItem="Kak-mE-ji9" firstAttribute="width" secondItem="ung-Nd-Wf4" secondAttribute="width" id="jwP-nF-BVm"/>
+                            <constraint firstItem="13E-Sh-OU4" firstAttribute="leading" secondItem="NqX-wi-Cur" secondAttribute="leading" id="qa3-2b-hue"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="testView" destination="ylJ-ys-jKj" id="bEq-UI-vpC"/>
-                    </connections>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drp-5r-LOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2000000000000002" y="-87.706146926536732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="github-logo" width="25" height="25"/>
+        <image name="login_bg" width="360" height="640"/>
+    </resources>
 </document>
