@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -21,6 +22,14 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.navigationController != nil && self.navigationController?.viewControllers.count == 1 {
+            let tabbarVC = self.tabBarController as! RAMAnimatedTabBarController
+            tabbarVC.animationTabBarHidden(false)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

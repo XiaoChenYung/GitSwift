@@ -76,9 +76,6 @@ class ViewControllerAnimatedTransition:NSObject, UIViewControllerAnimatedTransit
                         transitionContext.containerView.addSubview(subview)
                     }
                  }
-                if toVC.navigationController?.viewControllers.count == 1 {
-                    tabbar.animationTabBarHidden(false)
-                }
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
             

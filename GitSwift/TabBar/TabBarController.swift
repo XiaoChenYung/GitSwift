@@ -17,13 +17,13 @@ class TabBarController: RAMAnimatedTabBarController {
 
         self.viewModel = viewModel as? TabBarViewModel
         let navHome = NavigationController(rootViewController: UserListViewController(viewModel: (self.viewModel?.homeViewModel)!))
-        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "news-nor"), selImage: #imageLiteral(resourceName: "news"))
+        let homeAni = RAMAnimatedTabBarItem(title: "动态", image: #imageLiteral(resourceName: "home"), selImage: #imageLiteral(resourceName: "home-sel"))
         navHome.tabBarItem = homeAni
         let dongtai = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.sendViewModel)!))
-        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "home-nor") , selImage: #imageLiteral(resourceName: "home"))
+        let dongtaiAni = RAMAnimatedTabBarItem(title: "发送", image: #imageLiteral(resourceName: "star") , selImage: #imageLiteral(resourceName: "star-sel"))
         dongtai.tabBarItem = dongtaiAni
         let me = NavigationController(rootViewController: BaseViewController(viewModel: (self.viewModel?.meViewModel)!))
-        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "me"), selImage: #imageLiteral(resourceName: "me-nor"))
+        let meAni = RAMAnimatedTabBarItem(title: "我的", image: #imageLiteral(resourceName: "me"), selImage: #imageLiteral(resourceName: "me-sel"))
         me.tabBarItem = meAni
 //        self.viewControllers = [navHome]  
         super.init(viewControllers: [navHome, dongtai, me])

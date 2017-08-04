@@ -64,10 +64,6 @@ class NavigationControllerStack: NSObject, UINavigationControllerDelegate {
                 self.navigationControllers?.last?.pushViewController(VC, animated: true)
             case .pop:
                 self.navigationControllers?.last?.popViewController(animated: params.animate!)
-                if self.navigationControllers?.last?.viewControllers.count == 1 {
-                    let tabbarVC = self.navigationControllers?.last?.tabBarController as! RAMAnimatedTabBarController
-                    tabbarVC.animationTabBarHidden(false)
-                }
             case .reset:
                 APPDELEGATE?.window??.rootViewController = viewControllerFromViewModel(viewModel: params.viewModel)
             default:
