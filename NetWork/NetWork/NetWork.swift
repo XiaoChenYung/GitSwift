@@ -22,7 +22,7 @@ final class NetWork<T: ImmutableMappable> {
         self.endPoint = endPoint
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
-    
+   
     func getItems(_ path: String) -> Observable<[T]> {
         let absolutePath = "\(endPoint)/\(path)"
         return operatorItems(.get, absolutePath)
