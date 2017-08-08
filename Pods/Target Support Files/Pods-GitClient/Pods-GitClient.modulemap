@@ -1,0 +1,6 @@
+framework module Pods_GitClient {
+  umbrella header "Pods-GitClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

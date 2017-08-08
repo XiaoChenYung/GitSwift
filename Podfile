@@ -14,6 +14,13 @@ def test_pods
     pod 'Nimble'
 end
 
+def net_work
+    pod 'Alamofire'
+    pod 'RxAlamofire'
+    pod 'ObjectMapper'
+    pod 'AlamofireObjectMapper'
+end
+
 target 'GitSwift' do
     use_frameworks!
     rx_swift
@@ -43,14 +50,25 @@ target 'NetWork' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     rx_swift
-    pod 'Alamofire'
-    pod 'RxAlamofire'
-    pod 'ObjectMapper'
-    pod 'AlamofireObjectMapper'
-    
+    net_work
+
     target 'NetWorkTests' do
         inherit! :search_paths
         test_pods
     end
     
 end
+
+target 'GitClient' do
+    
+    use_frameworks!
+    rx_swift
+    net_work
+    
+    target 'GitClientTests' do
+        inherit! :search_paths
+        test_pods
+    end
+    
+end
+    

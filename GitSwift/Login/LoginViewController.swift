@@ -19,7 +19,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         
 //        Alamofire.request("https://api.github.com/authorizations/clients/73d8c44f52cc65cd1a19", parameters: ["scopes": ["user, repo"], "client_secret": "3b43822f9e972d27d8a19af8e072a702d6167ba2"], encoding: URLEncoding.default,
 //                          headers: ["Accept":"application/vnd.github.mirage-preview+json", "X-GitHub-OTP":password])
