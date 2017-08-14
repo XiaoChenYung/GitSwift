@@ -32,6 +32,10 @@
 		4BD1067430DEB23EB78F5EC6 /* Pods_GitSwift_GitSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9046370BCCBC4E77F48C2F08 /* Pods_GitSwift_GitSwiftTests.framework */; };
 		6D8F6FD828A9E6EC964C429A /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D4DCE4627619A7914AD7FA /* Pods_DomainTests.framework */; };
 		8B8040E5A40525FAB7E89DD4 /* Pods_Domain_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F015B6CED469E70417A54961 /* Pods_Domain_DomainTests.framework */; };
+		9210322A1F3A96D400089D37 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921032291F3A96D400089D37 /* Object.swift */; };
+		9210322D1F3A9A6A00089D37 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9210322C1F3A9A6A00089D37 /* Server.swift */; };
+		9210322F1F3A9CE200089D37 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9210322E1F3A9CE200089D37 /* User.swift */; };
+		921032311F3AB80A00089D37 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921032301F3AB80A00089D37 /* Authorization.swift */; };
 		922758791F32B3BA00067F30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922758781F32B3BA00067F30 /* LoginViewModel.swift */; };
 		9227587B1F32B82A00067F30 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */; };
 		9227587D1F32CC4D00067F30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227587C1F32CC4D00067F30 /* LoginViewController.swift */; };
@@ -206,6 +210,10 @@
 		863DB13DA176C2AD8C02B099 /* Pods-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
 		89C75F38907B39DB0778907E /* Pods_GitClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9046370BCCBC4E77F48C2F08 /* Pods_GitSwift_GitSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitSwift_GitSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		921032291F3A96D400089D37 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		9210322C1F3A9A6A00089D37 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		9210322E1F3A9CE200089D37 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		921032301F3AB80A00089D37 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		922758781F32B3BA00067F30 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9227587A1F32B82A00067F30 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		9227587C1F32CC4D00067F30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +452,31 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		921032271F3A966900089D37 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9210322E1F3A9CE200089D37 /* User.swift */,
+				921032301F3AB80A00089D37 /* Authorization.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		921032281F3A969E00089D37 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				921032291F3A96D400089D37 /* Object.swift */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		9210322B1F3A9A0200089D37 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				9210322C1F3A9A6A00089D37 /* Server.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		922758771F32B38A00067F30 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +490,9 @@
 		923D8B071F39512900F65BEE /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
+				9210322B1F3A9A0200089D37 /* Server */,
+				921032281F3A969E00089D37 /* BaseModel */,
+				921032271F3A966900089D37 /* Entities */,
 				923D8B231F3951DD00F65BEE /* Client */,
 				923D8B081F39512900F65BEE /* GitClient.h */,
 				923D8B091F39512900F65BEE /* Info.plist */,
@@ -1418,7 +1454,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9210322F1F3A9CE200089D37 /* User.swift in Sources */,
+				9210322A1F3A96D400089D37 /* Object.swift in Sources */,
+				9210322D1F3A9A6A00089D37 /* Server.swift in Sources */,
 				923D8B251F3951FC00F65BEE /* Cilent.swift in Sources */,
+				921032311F3AB80A00089D37 /* Authorization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2021,6 +2061,7 @@
 				923D8B1F1F39512900F65BEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		923D8B201F39512900F65BEE /* Build configuration list for PBXNativeTarget "GitClientTests" */ = {
 			isa = XCConfigurationList;
@@ -2029,6 +2070,7 @@
 				923D8B221F39512900F65BEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927390C81F1F4EDE006DB05F /* Build configuration list for PBXProject "GitSwift" */ = {
 			isa = XCConfigurationList;

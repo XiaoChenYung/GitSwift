@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import GitClient
 
 enum VCActionType {
     case push
@@ -27,9 +28,18 @@ struct VCActionParams {
 
 protocol ViewModelService {
     
+    var client: Client?  {get}
+    
 }
 
 class ViewModelServiceImp: NSObject, ViewModelService {
+    
+    var client: Client?
+    
+    override init() {
+        self.client = Client.client
+    }
+    
     let onPrepareForAction = PublishSubject<VCActionParams>()
     func pushViewModel(viewModel: ViewModel, animated: Bool = true) {
         onPrepareForAction.onNext(VCActionParams(type: .push, viewModel: viewModel, animate: animated, completion: nil))
